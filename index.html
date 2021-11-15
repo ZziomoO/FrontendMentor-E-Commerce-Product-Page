@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png"> 
+  
+  <title>Frontend Mentor | E-commerce product page</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="zoom">
+    <div style="width: 60vmin; display: flex; justify-content: end;"><img src="images/icon-close.svg" id="imgClose" onclick='zoomClose()'></div>
+    <div id="zCon">
+      <button id="lZoom" onclick='skip(-1)'><img src="images/icon-previous.svg" class="imgSkipZoom"></button>
+      <input type="image" src="images/image-product-1.jpg" id="imgZoom">
+      <button id="rZoom" onclick='skip(1)'><img src="images/icon-next.svg" class="imgSkipZoom"></button>
+    </div>
+    <div id="zThumb">
+      <input type="image" src="images/image-product-1-thumbnail.jpg" onclick='changeImage(1)' id="thumbz1" class="imgThumbz selectedThumbz">
+      <input type="image" src="images/image-product-2-thumbnail.jpg" onclick='changeImage(2)' id="thumbz2" class="imgThumbz">
+      <input type="image" src="images/image-product-3-thumbnail.jpg" onclick='changeImage(3)' id="thumbz3" class="imgThumbz">
+      <input type="image" src="images/image-product-4-thumbnail.jpg" onclick='changeImage(4)' id="thumbz4" class="imgThumbz">
+    </div>
+  </div>
+  <header>
+    <div>
+      <input type="image" src="images/icon-menu.svg" onclick='mobileMenu()' id="hamburger">
+      <a href="#" id="logo"><img src="images/logo.svg"></a>
+      <div id="mmCon">
+        <div id="mCon">
+          <img src="images/icon-close.svg" onclick='mobileCloseMenu()' id="mClose">
+          <div class="mObj"><a href="#">Collections</a><div></div></div>
+          <div class="mObj"><a href="#">Men</a><div></div></div>
+          <div class="mObj"><a href="#">Women</a><div></div></div>
+          <div class="mObj"><a href="#">About</a><div></div></div>
+          <div class="mObj"><a href="#">Contact</a><div></div></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <a href="#" onclick="" id="cartCon"><img src="images/icon-cart.svg" height="16px" id="cart" onclick='showcart()'>
+        <div id="cartCounter"></div>
+        <div id="cartSummary">
+          <div id="cartHeader">Cart</div>
+          <div id="summaryCon"> 
+            <div id="empty">Your cart is empty.</div>
+            <div id="prodCon"></div>
+            <button id="checkout" style="display: none;">Checkout</button>
+          </div>
+        </div>
+      </a>
+      <img src="images/image-avatar.png" id="avatar">
+    </div>
+  </header>
+  <main>
+    <div id="left">
+      <div id="lCon">
+        <div id="imCon">
+          <button id="lmobile" onclick='skip(-1)'><img src="images/icon-previous.svg" class="mobileSkip"></button>
+          <input type="button" id="sLeft" onclick='skip(-1)'>
+          <input type="image" src="images/image-product-1.jpg" onclick='zoom()' id="imgMain">
+          <input type="button" id="sRight" onclick='skip(1)'>
+          <button id="rmobile" onclick='skip(-1)'><img src="images/icon-next.svg" class="mobileSkip"></button>
+        </div>
+        <div id="tCon">
+          <input type="image" src="images/image-product-1-thumbnail.jpg" onclick='changeImage(1)' id="thumb1" class="imgThumb selectedThumb">
+          <input type="image" src="images/image-product-2-thumbnail.jpg" onclick='changeImage(2)' id="thumb2" class="imgThumb">
+          <input type="image" src="images/image-product-3-thumbnail.jpg" onclick='changeImage(3)' id="thumb3" class="imgThumb">
+          <input type="image" src="images/image-product-4-thumbnail.jpg" onclick='changeImage(4)' id="thumb4" class="imgThumb">
+        </div>
+      </div>
+    </div>
+    <div id="right">
+      <div id="rCon">
+        <h1>Sneaker Company</h1>
+        <h2>Fall Limited Edition Sneakers</h2>
+        <p>These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+        <div id="priCon">
+          <div id="pCon">
+            <h3>$125.00</h3>
+            <h4>50%</h4>
+          </div>
+          <h5>$250.00</h5>
+        </div>
+        <div id="cCon">
+          <div id="counter">
+            <div id="minus">
+              <input type="image" src="images/icon-minus.svg" onclick='changeValue(-1)' class="pm">
+            </div>
+            <div id="vCon">
+              <h6 id="count">0</h6>
+            </div>
+            <div id="plus">
+              <input type="image" src="images/icon-plus.svg" onclick='changeValue(1)' class="pm">
+            </div>
+          </div>
+          <button id="add" onclick='addProduct()'><img src="images/icon-cart.svg">Add to cart</button>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
